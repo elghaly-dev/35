@@ -43,7 +43,7 @@
     addrNote: "Memo signer / treasury. Do not send deposits. KEEP \u00b7 350 \u00b7 cheap_* stay off this page.",
     footerDream: "\ud83d\udcad you dream we build \ud83e\udde0\ud83d\udca1",
     footerMade: "made by love \u2764\ufe0f",
-    footerContact: "Email first: support@elghaly.dev. Calls only by appointment.",
+    footerContact: "Email first: 35@elghaly.dev. Calls only by appointment.",
     snapshotUnavailable: "snapshot unavailable"
   };
 
@@ -89,7 +89,7 @@
       onChain: "\u0639\u0644\u0649 \u0627\u0644\u0633\u0644\u0633\u0644\u0629", inLedger: "\u0641\u064a \u0627\u0644\u062f\u0641\u062a\u0631", missing: "\u0646\u0627\u0642\u0635", entries: "\u0625\u062f\u062e\u0627\u0644\u0627\u062a", total: "\u0627\u0644\u0625\u062c\u0645\u0627\u0644\u064a", lastRec: "\u0622\u062e\u0631 \u0645\u0637\u0627\u0628\u0642\u0629",
       addr: "\u0627\u0644\u0639\u0646\u0627\u0648\u064a\u0646", mode: "\u0627\u0644\u0648\u0636\u0639", support: "\u0627\u0644\u062f\u0639\u0645", mint: "\u0627\u0644\u0633\u0643", pool: "\u0627\u062a\u062c\u0627\u0647 \u0627\u0644\u0633\u064a\u0648\u0644\u0629", mail: "\u0628\u0631\u064a\u062f",
       record: "\u0627\u0644\u0633\u062c\u0644 \u0627\u0644\u0639\u0627\u0645",
-      footerContact: "\u0627\u0644\u0628\u0631\u064a\u062f \u0623\u0648\u0644\u064b\u0627: support@elghaly.dev. \u0627\u0644\u0645\u0643\u0627\u0644\u0645\u0627\u062a \u0628\u0627\u0644\u062a\u0639\u064a\u064a\u0646 \u0641\u0642\u0637.",
+      footerContact: "\u0627\u0644\u0628\u0631\u064a\u062f \u0623\u0648\u0644\u064b\u0627: 35@elghaly.dev. \u0627\u0644\u0645\u0643\u0627\u0644\u0645\u0627\u062a \u0628\u0627\u0644\u062a\u0639\u064a\u064a\u0646 \u0641\u0642\u0637.",
       ledgerNote: "\u0644\u0642\u0637\u0629 \u0632\u0645\u0646\u064a\u0629 \u0644\u0627 \u062a\u062a\u062d\u062f\u0651\u062b \u0645\u0639 \u062a\u0634\u063a\u064a\u0644 \u0627\u0644\u0645\u0643\u062a\u0628: \u0622\u062e\u0631 \u0645\u0637\u0627\u0628\u0642\u0629 \u0639\u0644\u0649 \u0635\u0646\u062f\u0648\u0642 \u0627\u0644\u0645\u0643\u062a\u0628 (2026-09-17\u060c \u0627\u0644\u0623\u0633\u0628\u0648\u0639 2026-W38). \u062a\u0642\u0631\u0623 \u0647\u0630\u0647 \u0627\u0644\u0635\u0641\u062d\u0629 <a href=\"/ledger-snapshot.json\">ledger-snapshot.json</a> \u0648\u0644\u0627 \u062a\u0639\u064a\u062f \u0627\u062d\u062a\u0633\u0627\u0628 \u0627\u0644\u062f\u0641\u062a\u0631. \u064a\u0628\u0642\u0649 \u0627\u0644\u0633\u0643 \u063a\u064a\u0631 \u0645\u0646\u0634\u0648\u0631."
     }),
     ru: clone(EN, {
@@ -100,7 +100,7 @@
       termst: "\u0423\u0441\u043b\u043e\u0432\u0438\u044f", earnt: "\u0422\u0430\u0431\u043b\u0438\u0446\u0430 \u0437\u0430\u0440\u0430\u0431\u043e\u0442\u043a\u0430", credt: "\u0417\u0430\u0447\u0435\u043c \u043d\u0443\u0436\u0435\u043d \u043a\u0440\u0435\u0434\u0438\u0442", ledt: "\u041a\u043d\u0438\u0433\u0430",
       addr: "\u0410\u0434\u0440\u0435\u0441\u0430", mode: "\u0420\u0435\u0436\u0438\u043c", support: "\u041f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0430", mint: "\u041c\u0438\u043d\u0442", pool: "\u041f\u0443\u043b", mail: "\u041f\u043e\u0447\u0442\u0430",
       onChain: "\u0412 \u0441\u0435\u0442\u0438", inLedger: "\u0412 \u043a\u043d\u0438\u0433\u0435", missing: "\u041d\u0435\u0442 \u0432 \u043a\u043d\u0438\u0433\u0435", entries: "\u0417\u0430\u043f\u0438\u0441\u0438", total: "\u0418\u0442\u043e\u0433", lastRec: "\u041f\u043e\u0441\u043b\u0435\u0434\u043d\u044f\u044f \u0441\u0432\u0435\u0440\u043a\u0430",
-      footerContact: "\u0421\u043d\u0430\u0447\u0430\u043b\u0430 \u043f\u0438\u0448\u0438\u0442\u0435: support@elghaly.dev. \u0417\u0432\u043e\u043d\u043a\u0438 \u0442\u043e\u043b\u044c\u043a\u043e \u043f\u043e \u0437\u0430\u043f\u0438\u0441\u0438.",
+      footerContact: "\u0421\u043d\u0430\u0447\u0430\u043b\u0430 \u043f\u0438\u0448\u0438\u0442\u0435: 35@elghaly.dev. \u0417\u0432\u043e\u043d\u043a\u0438 \u0442\u043e\u043b\u044c\u043a\u043e \u043f\u043e \u0437\u0430\u043f\u0438\u0441\u0438.",
       termsn: "\u041f\u043e\u043b\u043d\u044b\u0435 \u043f\u0440\u0430\u0432\u0438\u043b\u0430 \u0438 \u0442\u0430\u0431\u043b\u0438\u0446\u0430 \u0437\u0430\u0440\u0430\u0431\u043e\u0442\u043a\u0430 \u0432 github.com/elghaly-dev/35."
     }),
     zh: clone(EN, {
@@ -110,20 +110,20 @@
       termst: "\u6761\u6b3e", earnt: "\u79ef\u5206\u8868", credt: "\u79ef\u5206\u7528\u9014", ledt: "\u8d26\u672c",
       addr: "\u5730\u5740", mode: "\u6a21\u5f0f", support: "\u652f\u6301", mint: "\u94f8\u5e01", pool: "\u6c60", mail: "\u90ae\u4ef6",
       onChain: "\u94fe\u4e0a", inLedger: "\u8d26\u672c\u5185", missing: "\u7f3a\u5931", entries: "\u6761\u76ee", total: "\u5408\u8ba1", lastRec: "\u6700\u8fd1\u5bf9\u8d26",
-      footerContact: "\u8bf7\u5148\u53d1\u90ae\u4ef6\uff1asupport@elghaly.dev\u3002\u7535\u8bdd\u53ea\u63a5\u9884\u7ea6\u3002",
+      footerContact: "\u8bf7\u5148\u53d1\u90ae\u4ef6\uff1a35@elghaly.dev\u3002\u7535\u8bdd\u53ea\u63a5\u9884\u7ea6\u3002",
       termsn: "\u5b8c\u6574\u89c4\u5219\u4e0e\u79ef\u5206\u8868\u89c1 github.com/elghaly-dev/35\u3002"
     }),
     de: clone(EN, {
       kicker: "Geschlossener Desk \u00b7 keine \u00f6ffentliche App",
       doorst: "T\u00fcren", askt: "35 fragen", askPlaceholder: "35 fragen", askBtn: "Antwort", mailBtn: "Desk mailen",
       termst: "Bedingungen", earnt: "Verdienstplan", credt: "Wof\u00fcr ein Credit gilt", ledt: "Ledger",
-      footerContact: "Zuerst E-Mail: support@elghaly.dev. Anrufe nur nach Termin."
+      footerContact: "Zuerst E-Mail: 35@elghaly.dev. Anrufe nur nach Termin."
     }),
     es: clone(EN, {
       kicker: "Mesa cerrada \u00b7 no es una app p\u00fablica",
       doorst: "Puertas", askt: "Preguntar a 35", askPlaceholder: "Pregunta a 35", askBtn: "Responder", mailBtn: "Escribir al desk",
       termst: "T\u00e9rminos", earnt: "Tabla de cr\u00e9ditos", credt: "Para qu\u00e9 sirve un cr\u00e9dito", ledt: "Libro mayor",
-      footerContact: "Primero correo: support@elghaly.dev. Llamadas solo con cita."
+      footerContact: "Primero correo: 35@elghaly.dev. Llamadas solo con cita."
     })
   };
 
