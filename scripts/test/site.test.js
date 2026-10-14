@@ -115,7 +115,7 @@ test("ui.js fills the ledger from the snapshot and says so when it cannot", () =
 test("English page copy avoids the words the desk does not use", () => {
   const root = path.resolve(__dirname, "../..");
   const text = fs.readFileSync(path.join(root, "index.html"), "utf8").replace(/<[^>]+>/g, " ");
-  for (const word of ["profit", "guaranteed", "audit", "launched", "trading"]) {
+  for (const word of ["profit", "guaranteed", "guarantee", "audit", "launched", "trading", "live"]) {
     assert.ok(!new RegExp(`\\b${word}\\b`, "i").test(text), `index.html says "${word}"`);
   }
 });

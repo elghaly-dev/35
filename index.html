@@ -2,78 +2,427 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>35 — closed desk · elghaly</title>
   <meta name="description" content="We run a closed desk for our own team. There is no public app, nothing for sale, and no deposits accepted. Mail 35@elghaly.dev." />
-  <meta name="theme-color" content="#0b1214" />
+  <meta name="theme-color" content="#5a4fc0" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preload" href="/fonts/outfit-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/outfit-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/outfit-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" as="image" type="image/avif"
+    href="/assets/hero/hero-1280.avif"
+    imagesrcset="/assets/hero/hero-640.avif 640w, /assets/hero/hero-1280.avif 1280w, /assets/hero/hero-1920.avif 1920w"
+    imagesizes="(max-width: 960px) 100vw, 72rem" />
   <style>
-    :root { --bg:#0b1214; --ink:#e8fbf6; --dim:#9ab3ad; --purple:#2ee6c7; --green:#2ee6c7; --cyan:#7cf0dc; --line:rgba(46,230,199,.22); --card:#121a19; }
-    * { box-sizing:border-box; margin:0; padding:0; }
-    html,body { background:var(--bg); color:var(--ink); }
-    body { font-family:ui-sans-serif,system-ui,sans-serif; line-height:1.6; min-height:100vh; background: radial-gradient(900px 480px at 8% -8%, rgba(46,230,199,.10), transparent 55%), var(--bg); -webkit-font-smoothing:antialiased; }
-    [dir="rtl"] body { font-family:"IBM Plex Sans Arabic","Noto Naskh Arabic",ui-sans-serif,sans-serif; }
-    .wrap { max-width:640px; margin:0 auto; padding:24px 20px 72px; }
-    header { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; margin-bottom:8px; }
-    .brand { display:flex; align-items:center; gap:10px; text-decoration:none; color:inherit; flex-shrink:0; }
-    .mark { width:40px; height:40px; border-radius:12px; background:#2ee6c7; color:#04110a; display:grid; place-items:center; font-weight:800; font-size:15px; }
-    .word { font-size:12px; letter-spacing:.32em; text-transform:uppercase; color:var(--dim); }
-    .header-right { display:flex; flex-wrap:wrap; align-items:center; gap:6px; justify-content:flex-end; }
-    .lang { display:flex; flex-wrap:wrap; gap:5px; justify-content:flex-end; }
-    .lang button { background:transparent; color:var(--dim); border:1px solid var(--line); border-radius:999px; padding:5px 8px; font-size:10px; cursor:pointer; }
-    .lang button.on { color:#04110a; background:var(--green); border-color:var(--green); }
-    .hero { margin-top:8px; }
-    .banner { width:100%; border-radius:16px; overflow:hidden; border:1px solid var(--line); background:#0b1214; margin-bottom:20px; }
-    .banner img { display:block; width:100%; height:auto; }
-    .kicker { color:var(--green); font-size:11px; letter-spacing:.2em; text-transform:uppercase; margin-bottom:10px; }
-    .lede { font-size:17px; color:var(--dim); line-height:1.55; }
-    .cta { margin-top:20px; }
-    .cta a, .ask button { text-decoration:none; border-radius:999px; padding:12px 18px; font-size:14px; font-weight:600; border:0; cursor:pointer; display:inline-block; }
-    .cta .primary, .ask .go { background:var(--green); color:#04110a; }
-    .ask .mail { border:1px solid var(--line); color:var(--ink); background:transparent; }
-    .grid { display:grid; grid-template-columns:1fr; gap:10px; margin-top:32px; }
-    .card, .ask { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px 18px; }
-    .card h2 { font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--green); margin-bottom:6px; }
-    .card p { color:var(--dim); font-size:14px; line-height:1.5; }
-    section { margin-top:36px; }
-    h2 { font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--purple); margin-bottom:14px; }
-    .rule { font-family:ui-monospace,Menlo,Consolas,monospace; font-size:13px; color:var(--ink); background:#0f1918; border:1px solid var(--line); border-radius:14px; padding:14px 16px; line-height:1.55; }
-    .doors { display:grid; grid-template-columns:1fr; gap:10px; margin-top:10px; }
-    .door { display:block; text-decoration:none; color:inherit; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px; transition:border-color .15s; }
-    .door:hover { border-color:rgba(46,230,199,.45); }
-    .door-name { font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--green); margin-bottom:4px; }
-    .door-line { font-size:14px; color:var(--dim); line-height:1.45; }
-    dl { display:grid; grid-template-columns:1fr; gap:0; }
-    .addr-row { display:grid; grid-template-columns:110px 1fr; gap:8px 14px; padding:10px 0; border-bottom:1px solid var(--line); align-items:baseline; }
-    .addr-row:last-of-type { border-bottom:0; }
-    dt { font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--purple); }
-    dd { font-family:ui-monospace,Menlo,Consolas,monospace; font-size:12px; word-break:break-all; color:var(--ink); }
-    footer { margin-top:44px; padding-top:28px; border-top:1px solid var(--line); color:var(--dim); font-size:13px; text-align:center; line-height:1.85; }
-    footer .signs-up, footer .signs-down { letter-spacing:.1em; font-size:15px; }
-    footer .signs-up { margin-bottom:12px; }
-    footer .signs-down { margin-top:12px; }
-    a { color:var(--cyan); }
-    .ask textarea { width:100%; min-height:88px; margin:12px 0; padding:12px; border-radius:12px; border:1px solid var(--line); background:#0f1918; color:var(--ink); font:inherit; resize:vertical; }
-    .ask .out { margin-top:14px; color:var(--ink); white-space:pre-wrap; font-size:14px; }
-    .ask .row { display:flex; flex-wrap:wrap; gap:8px; }
-    .ask .note, .note { font-size:12px; margin-top:12px; color:var(--dim); line-height:1.55; }
-    .terms { list-style:none; display:grid; gap:12px; }
-    .terms li { color:var(--dim); font-size:14px; border-left:3px solid var(--green); padding-left:14px; line-height:1.55; }
-    .earn { width:100%; border-collapse:collapse; margin-top:4px; }
-    .earn th, .earn td { text-align:left; padding:12px 0; border-bottom:1px solid var(--line); font-size:14px; }
-    .earn th { font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--green); padding-bottom:10px; }
-    .earn td { color:var(--dim); }
-    .earn td:last-child { text-align:right; font-family:ui-monospace,Menlo,Consolas,monospace; color:var(--ink); }
-    .earn code { color:var(--ink); font-family:ui-monospace,Menlo,Consolas,monospace; font-size:13px; }
-    .sr { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
-    @media (min-width:640px) {
-      .wrap { max-width:720px; padding:32px 28px 88px; }
-      .grid { grid-template-columns:repeat(3,1fr); gap:12px; }
-      .doors { grid-template-columns:1fr 1fr; gap:12px; }
-      .lede { font-size:18px; }
+    @font-face {
+      font-family: "Outfit";
+      font-style: normal;
+      font-weight: 700;
+      font-display: optional;
+      src: url("/fonts/outfit-latin-700-normal.woff2") format("woff2");
+      unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
     }
+    @font-face {
+      font-family: "Outfit";
+      font-style: normal;
+      font-weight: 400;
+      font-display: optional;
+      src: url("/fonts/outfit-latin-400-normal.woff2") format("woff2");
+      unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+    }
+    @font-face {
+      font-family: "Outfit";
+      font-style: normal;
+      font-weight: 500;
+      font-display: optional;
+      src: url("/fonts/outfit-latin-500-normal.woff2") format("woff2");
+      unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+    }
+    @font-face {
+      font-family: "Cairo";
+      font-style: normal;
+      font-weight: 200 1000;
+      font-display: swap;
+      src: url("/fonts/cairo-arabic-wght.woff2") format("woff2");
+      unicode-range: U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC;
+    }
+    :root {
+      color-scheme: dark;
+      --bg: #5a4fc0;
+      --bg-2: #6a5fd0;
+      --card: #0d0b1f;
+      --card-2: #17142f;
+      --line: #1c1838;
+      --line-2: #2e2856;
+      --text: #ffffff;
+      --muted: #b9b3e6;
+      --gold: #c9c2ff;
+      --gold-2: #e2deff;
+      --gold-ink: #17123d;
+      --pos: #7be3b0;
+      --on-bg-line: rgba(255, 255, 255, 0.2);
+      --shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 18px 40px -20px rgba(16, 10, 58, 0.6);
+      --radius: 22px;
+      --radius-sm: 20px;
+      --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+      --font: "Outfit", "Cairo", system-ui, -apple-system, "Segoe UI", sans-serif;
+      --max: 72rem;
+      --gutter: 1rem;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; background: var(--bg); scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100dvh;
+      color: var(--text);
+      font: 400 1.0625rem/1.6 var(--font);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background: linear-gradient(180deg, var(--bg), var(--bg-2));
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: var(--text); text-underline-offset: 3px; }
+    a:hover { color: var(--gold-2); }
+    :focus-visible { outline: 2px solid var(--text); outline-offset: 3px; border-radius: 6px; }
+    .skip {
+      position: absolute;
+      left: 1rem;
+      top: -4rem;
+      z-index: 100;
+      padding: 0.6rem 1rem;
+      border-radius: 999px;
+      background: var(--gold);
+      color: var(--gold-ink);
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .skip:focus { top: 0.75rem; }
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(90, 79, 192, 0.94);
+      border-bottom: 1px solid var(--on-bg-line);
+    }
+    @supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+      .nav {
+        background: rgba(90, 79, 192, 0.78);
+        -webkit-backdrop-filter: saturate(160%) blur(16px);
+        backdrop-filter: saturate(160%) blur(16px);
+      }
+    }
+    .nav__langs {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0.45rem var(--gutter) 0.35rem;
+      border-bottom: 1px solid var(--on-bg-line);
+    }
+    .lang-switch {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      min-width: 0;
+      max-width: 100%;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .lang-switch::-webkit-scrollbar { display: none; }
+    .lang-switch button {
+      flex: none;
+      min-height: 44px;
+      min-width: 44px;
+      padding: 8px 12px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--text);
+      font: 500 0.8125rem var(--font);
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .lang-switch button[aria-pressed="true"] {
+      border-color: var(--line);
+      background: var(--card);
+    }
+    .nav__in {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0.65rem var(--gutter);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+    }
+    .mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: var(--gold);
+      color: var(--gold-ink);
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0;
+    }
+    .shell {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 1.25rem var(--gutter) 3.5rem;
+    }
+    .hero { margin-top: 0.5rem; }
+    .kicker {
+      margin: 0 0 0.65rem;
+      color: var(--text);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .lede {
+      margin: 0;
+      font-size: clamp(1.05rem, 3.8vw, 1.2rem);
+      line-height: 1.55;
+      color: var(--text);
+      max-width: 42rem;
+    }
+    .cta { margin-top: 1.35rem; margin-bottom: 1.75rem; }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0.75rem 1.35rem;
+      border-radius: 999px;
+      background: var(--gold);
+      color: var(--gold-ink);
+      font-weight: 600;
+      text-decoration: none;
+      border: 0;
+      cursor: pointer;
+      transition: transform 0.25s var(--ease), box-shadow 0.25s;
+    }
+    .btn-primary:hover { color: var(--gold-ink); transform: translateY(-1px); }
+    .hero__art {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      contain: layout;
+    }
+    .hero__art img { width: 100%; height: 100%; object-fit: cover; }
+    .section-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      padding: 1.1rem 1.25rem;
+    }
+    .grid {
+      display: grid;
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+    @media (min-width: 640px) {
+      .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      padding: 1.15rem 1.25rem;
+    }
+    .card h2 {
+      margin: 0 0 0.45rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .card p { margin: 0; color: var(--muted); font-size: 0.98rem; line-height: 1.5; }
+    section { margin-top: 2.75rem; }
+    section > h2 {
+      margin: 0 0 1rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+    .rule {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 0.9rem;
+      color: var(--text);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 1rem 1.1rem;
+      line-height: 1.55;
+    }
+    .doors { display: grid; gap: 0.75rem; }
+    @media (min-width: 640px) { .doors { grid-template-columns: 1fr 1fr; } }
+    .door {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 1rem 1.1rem;
+      min-height: 44px;
+      transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
+    }
+    .door:hover { border-color: var(--line-2); transform: translateY(-2px); color: inherit; }
+    .door-name {
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.35rem;
+    }
+    .door-line { font-size: 0.98rem; color: var(--muted); line-height: 1.45; margin: 0; }
+    .ask {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.25rem;
+    }
+    .ask textarea {
+      width: 100%;
+      min-height: 88px;
+      margin: 0.75rem 0;
+      padding: 0.75rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--line);
+      background: var(--card-2);
+      color: var(--text);
+      font: inherit;
+      resize: vertical;
+    }
+    .ask .row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .ask button {
+      min-height: 44px;
+      padding: 0.65rem 1.1rem;
+      border-radius: 999px;
+      font: 600 0.9rem var(--font);
+      cursor: pointer;
+    }
+    .ask .go { background: var(--gold); color: var(--gold-ink); border: 0; }
+    .ask .mail { border: 1px solid var(--line-2); color: var(--text); background: transparent; }
+    .ask .out { margin-top: 0.85rem; color: var(--text); white-space: pre-wrap; font-size: 0.98rem; }
+    .note { font-size: 0.88rem; margin-top: 0.75rem; color: var(--muted); line-height: 1.55; }
+    .terms { list-style: none; display: grid; gap: 0.75rem; padding: 0; margin: 0; }
+    .terms li {
+      color: var(--muted);
+      font-size: 0.98rem;
+      border-left: 3px solid var(--gold);
+      padding-left: 0.9rem;
+      line-height: 1.55;
+    }
+    .earn { width: 100%; border-collapse: collapse; margin-top: 0.25rem; }
+    .earn th, .earn td {
+      text-align: left;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.98rem;
+    }
+    .earn th {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding-bottom: 0.55rem;
+    }
+    .earn td { color: var(--muted); }
+    .earn td:last-child {
+      text-align: right;
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      color: var(--text);
+    }
+    .earn code { color: var(--text); font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.9rem; }
+    dl { margin: 0; }
+    .addr-row {
+      display: grid;
+      grid-template-columns: minmax(7rem, 9rem) 1fr;
+      gap: 0.35rem 1rem;
+      padding: 0.65rem 0;
+      border-bottom: 1px solid var(--line);
+      align-items: baseline;
+    }
+    .addr-row:last-of-type { border-bottom: 0; }
+    dt {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    dd {
+      margin: 0;
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 0.82rem;
+      word-break: break-all;
+      color: var(--text);
+    }
+    .footer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--on-bg-line);
+      text-align: center;
+      color: var(--text);
+      font-size: 0.95rem;
+      line-height: 1.75;
+    }
+    .footer p { margin: 0.45rem 0; }
+    .footer__nav a {
+      display: inline-block;
+      min-height: 44px;
+      line-height: 44px;
+      padding: 0 0.35rem;
+    }
+    .sr {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    html[lang|="zh"] .kicker,
+    html[lang|="zh"] .card h2,
+    html[lang|="zh"] section > h2 { word-break: keep-all; line-break: strict; }
+    html[lang|="ar"] .kicker,
+    html[lang|="ar"] .btn-primary,
+    html[lang|="ar"] .ask button { letter-spacing: 0; }
   </style>
   <link rel="canonical" href="https://35.elghaly.dev/">
   <meta property="og:type" content="website">
@@ -91,123 +440,134 @@
   <meta name="twitter:image" content="https://35.elghaly.dev/og.png">
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <a class="brand" href="/"><div class="mark">35</div><span class="word">elghaly</span></a>
-      <div class="header-right">
-        <div class="lang" id="langbar"></div>
-      </div>
-    </header>
+  <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+  <header class="nav">
+    <div class="nav__langs">
+      <div class="lang-switch" id="langbar" role="group" aria-label="Language"></div>
+    </div>
+    <div class="nav__in">
+      <a class="brand" href="/"><span class="mark" aria-hidden="true">35</span><span>elghaly</span></a>
+    </div>
+  </header>
+  <div class="shell">
     <main id="main">
-    <div class="hero">
-      <div class="banner"><img src="IMG_5183.jpeg" alt="35 ElGhaly" width="1168" height="784" /></div>
-      <div class="kicker" data-i18n="kicker">Closed desk · not a public app</div>
-      <h1 class="sr">35</h1>
-      <p class="lede" data-i18n="lede">35 is a private earned-credit ledger for this desk. There is no public bot to click, no coin to buy, no deposit to send. Follow the record. Mail if you must. Mint stays unpublished until the desk&#39;s realized earnings cover its rent.</p>
-      <div class="cta"><a class="primary" href="mailto:35@elghaly.dev">35@elghaly.dev</a></div>
-    </div>
-    <div class="grid">
-      <article class="card"><h2 data-i18n="c1t">Closed</h2><p data-i18n="c1p">The sniper and flash are not a public product.</p></article>
-      <article class="card"><h2 data-i18n="c2t">Earned, not bought</h2><p data-i18n="c2p">Credit later comes from signed desk-usage memos. Nobody buys 35.</p></article>
-      <article class="card"><h2 data-i18n="c3t">Not a listing</h2><p data-i18n="c3p">No pool today. Do not look for a contract to ape.</p></article>
-    </div>
-    <section>
-      <h2 data-i18n="doorst">Doors</h2>
-      <div class="doors">
-        <a class="door" href="https://iris-35.elghaly.dev/" rel="noopener">
-          <div class="door-name" data-i18n="door1n">Iris · free glass</div>
-          <p class="door-line" data-i18n="door1p">A free glass door. Not 35 credits — just a window into the work.</p>
-        </a>
-        <a class="door" href="https://plumb-35.elghaly.dev/" rel="noopener">
-          <div class="door-name" data-i18n="door2n">Plumb · ready desk seats</div>
-          <p class="door-line" data-i18n="door2p">Ready desk seats when the desk opens them. No price here — follow the door.</p>
-        </a>
+      <div class="hero">
+        <p class="kicker" data-i18n="kicker">Closed desk · not a public app</p>
+        <h1 class="sr" data-i18n="h1">35</h1>
+        <p class="lede" data-i18n="lede">35 is a private earned-credit ledger for this desk. There is no public bot to click, no coin to buy, no deposit to send. Follow the record. Mail if you must. Mint stays unpublished until the desk&#39;s realized earnings cover its rent.</p>
+        <div class="cta"><a class="btn-primary" href="mailto:35@elghaly.dev">35@elghaly.dev</a></div>
+        <picture class="hero__art">
+          <source type="image/avif" srcset="/assets/hero/hero-640.avif 640w, /assets/hero/hero-1280.avif 1280w, /assets/hero/hero-1920.avif 1920w" sizes="(max-width: 960px) 100vw, 72rem" />
+          <source type="image/webp" srcset="/assets/hero/hero-640.webp 640w, /assets/hero/hero-1280.webp 1280w, /assets/hero/hero-1920.webp 1920w" sizes="(max-width: 960px) 100vw, 72rem" />
+          <img src="/assets/hero/hero-1280.webp" alt="Abstract ledger art for the 35 closed desk" width="1280" height="853" decoding="async" fetchpriority="high" />
+        </picture>
       </div>
-    </section>
-    <section>
-      <h2 data-i18n="askt">Ask 35</h2>
-      <div class="ask">
-        <p data-i18n="askp">You get an instant answer here. The same question is also sent to 35@elghaly.dev so the desk can reply.</p>
-        <textarea id="q" placeholder="Ask 35"></textarea>
-        <div class="row">
-          <button class="go" type="button" id="askBtn">Answer</button>
-          <button class="mail" type="button" id="mailBtn">Mail the desk</button>
+      <div class="grid">
+        <article class="card"><h2 data-i18n="c1t">Closed</h2><p data-i18n="c1p">The sniper and flash are not a public product.</p></article>
+        <article class="card"><h2 data-i18n="c2t">Earned, not bought</h2><p data-i18n="c2p">Credit later comes from signed desk-usage memos. Nobody buys 35.</p></article>
+        <article class="card"><h2 data-i18n="c3t">Not a listing</h2><p data-i18n="c3p">No pool today. Do not look for a contract to ape.</p></article>
+      </div>
+      <section>
+        <h2 data-i18n="doorst">Doors</h2>
+        <div class="doors">
+          <a class="door" href="https://iris-35.elghaly.dev/" rel="noopener">
+            <div class="door-name" data-i18n="door1n">Iris · free glass</div>
+            <p class="door-line" data-i18n="door1p">A free glass door. Not 35 credits — just a window into the work.</p>
+          </a>
+          <a class="door" href="https://plumb-35.elghaly.dev/" rel="noopener">
+            <div class="door-name" data-i18n="door2n">Plumb · ready desk seats</div>
+            <p class="door-line" data-i18n="door2p">Ready desk seats when the desk opens them. No price here — follow the door.</p>
+          </a>
         </div>
-        <p class="note" id="sent"></p>
-        <p class="note">Answers come from this page. <b>Answer</b> also sends your question to 35@elghaly.dev through formsubmit.co.</p>
-        <p class="out" id="a"></p>
-      </div>
-    </section>
-    <section><h2 data-i18n="locked">Locked</h2><p class="rule" data-i18n="lockedp">Path A. Closed desk. No purchase. No redeem. No public app.</p></section>
-    <section>
-      <h2 data-i18n="termst">Terms</h2>
-      <ul class="terms">
-        <li data-i18n="t1">Earned, not bought. 35 is never sold. No presale, no public sale, no purchase of any kind.</li>
-        <li data-i18n="t2">No deposits. Nobody sends SOL or USDC to a 35 address in exchange for credit.</li>
-        <li data-i18n="t3">No redemption. Credit is not redeemable for cash, SOL, or USDC. There is no redemption desk.</li>
-        <li data-i18n="t4">Not equity. Not a SAFE, note, or claim on any company. Not a promise of returns or buyback. Not a deposit receipt.</li>
-        <li data-i18n="t5">A credit comes into being when an allowlisted desk signer lands a signed memo for work published in the earn schedule, and in no other way.</li>
-        <li data-i18n="t6">Supply at mint is the credit ledger total. It is derived from signed memos, never an invented number.</li>
-      </ul>
-      <p class="note" data-i18n="termsn">Full rules, kill list, and earn schedule are in the public record at github.com/Alarm2024/35.</p>
-    </section>
-    <section>
-      <h2 data-i18n="earnt">Earn schedule</h2>
-      <table class="earn">
-        <thead><tr><th data-i18n="earnwhat">What earns a credit</th><th data-i18n="earncredit">Credit</th></tr></thead>
-        <tbody>
-          <tr><td><code>desk.session</code></td><td><code>1.000000</code></td></tr>
-          <tr><td><code>desk.report</code></td><td><code>2.000000</code></td></tr>
-        </tbody>
-      </table>
-      <p class="note" data-i18n="earnp">A rate that is not on this table cannot be issued — the issuer refuses it and the mint gate fails the ledger. Rates may change; already-issued credits keep the rate they were issued at.</p>
-      <p class="note"><a href="https://github.com/Alarm2024/35/blob/main/EARN.md">EARN.md</a></p>
-    </section>
-    <section>
-      <h2 data-i18n="credt">What a credit is for</h2>
-      <ul class="terms">
-        <li data-i18n="cred1">Today — nothing spendable. A credit is a signed ledger row proving the desk recorded work at the published rate. It does not entitle anyone to tokens, cash, SOL, or USDC right now. Mint unpublished. No pool.</li>
-        <li data-i18n="cred2">Later — when all of these hold: the desk&#39;s realized earnings cover rent, the ledger reconciles, gate.js prints PASS, and the owner explicitly says mint: each credit may convert 1:1 to one unit of 35 at six decimals in a single mint event. Supply equals the ledger total from signed memos — never invented. Until then, credits stay credits.</li>
-        <li data-i18n="cred3">Never — 35 is not sold. Nobody buys credit with SOL or USDC. Not redeemable for cash or crypto. Not equity, not a deposit receipt, not a promise of returns or buyback. If the gate never passes, credits remain credits.</li>
-      </ul>
-    </section>
-    <section>
-      <h2 data-i18n="ledt">Ledger</h2>
-      <dl class="ledger" id="ledger">
-        <div class="addr-row"><dt>On chain</dt><dd data-snap="onChain">5</dd></div>
-        <div class="addr-row"><dt>In ledger</dt><dd data-snap="inLedger">5</dd></div>
-        <div class="addr-row"><dt>Missing</dt><dd data-snap="missing">0</dd></div>
-        <div class="addr-row"><dt>Entries</dt><dd data-snap="entries">5</dd></div>
-        <div class="addr-row"><dt>Total</dt><dd data-snap="total">5.000000</dd></div>
-        <div class="addr-row"><dt data-snap="week">2026-W38</dt><dd data-snap="weekCredit">5.000000</dd></div>
-        <div class="addr-row"><dt>Last reconcile</dt><dd data-snap="status">reconciled on 2026-09-17</dd></div>
-      </dl>
-      <p class="note" id="ledgerNote">A snapshot, not a live reading: the last reconcile run on the desk box (2026-09-17, week 2026-W38). This page reads <a href="/ledger-snapshot.json">ledger-snapshot.json</a> and does not recompute the ledger. Mint stays unpublished.</p>
-    </section>
-    <section>
-      <h2 data-i18n="addr">Addresses</h2>
-      <dl>
-        <div class="addr-row"><dt data-i18n="mode">Mode</dt><dd id="mode">earned</dd></div>
-        <div class="addr-row"><dt>Mail</dt><dd><a href="mailto:35@elghaly.dev">35@elghaly.dev</a></dd></div>
-        <div class="addr-row"><dt data-i18n="support">Support</dt><dd><span data-i18n="weAre24">We are 24</span> · <a href="mailto:support@elghaly.dev">support@elghaly.dev</a></dd></div>
-        <div class="addr-row"><dt>deskSigner</dt><dd id="deskSigner"><a href="https://solscan.io/account/3BZGNtr7AQ5c6Rf7nUhunfvqooQAtb5Eaek9Hw1npbLo">3BZGNtr7AQ5c6Rf7nUhunfvqooQAtb5Eaek9Hw1npbLo</a></dd></div>
-        <div class="addr-row"><dt>Squads</dt><dd id="squadsVault"><a href="https://solscan.io/account/GMyuRJbwPTF5pEHvMCNJqujoLk8tZCdFY6i9feMoczcQ">GMyuRJbwPTF5pEHvMCNJqujoLk8tZCdFY6i9feMoczcQ</a></dd></div>
-        <div class="addr-row"><dt data-i18n="record">Public record</dt><dd><a href="https://github.com/Alarm2024/35">github.com/Alarm2024/35</a></dd></div>
-        <div class="addr-row"><dt data-i18n="mint">Mint</dt><dd id="mint">unpublished</dd></div>
-        <div class="addr-row"><dt data-i18n="pool">Pool</dt><dd id="pool">unpublished</dd></div>
-      </dl>
-      <p class="note">Memo signer / treasury. Do not send deposits. KEEP · 350 · cheap_* stay off this page.</p>
-    </section>
+      </section>
+      <section>
+        <h2 data-i18n="askt">Ask 35</h2>
+        <div class="ask">
+          <p data-i18n="askp">You get an instant answer here. The same question is also sent to 35@elghaly.dev so the desk can reply.</p>
+          <textarea id="q" data-i18n-placeholder="askPlaceholder" placeholder="Ask 35"></textarea>
+          <div class="row">
+            <button class="go" type="button" id="askBtn" data-i18n="askBtn">Answer</button>
+            <button class="mail" type="button" id="mailBtn" data-i18n="mailBtn">Mail the desk</button>
+          </div>
+          <p class="note" id="sent"></p>
+          <p class="note" data-i18n="askNote">Answers come from this page. <b>Answer</b> also sends your question to 35@elghaly.dev through formsubmit.co.</p>
+          <p class="out" id="a"></p>
+        </div>
+      </section>
+      <section><h2 data-i18n="locked">Locked</h2><p class="rule" data-i18n="lockedp">Path A. Closed desk. No purchase. No redeem. No public app.</p></section>
+      <section>
+        <h2 data-i18n="termst">Terms</h2>
+        <ul class="terms">
+          <li data-i18n="t1">Earned, not bought. 35 is never sold. No presale, no public sale, no purchase of any kind.</li>
+          <li data-i18n="t2">No deposits. Nobody sends SOL or USDC to a 35 address in exchange for credit.</li>
+          <li data-i18n="t3">No redemption. Credit is not redeemable for cash, SOL, or USDC. There is no redemption desk.</li>
+          <li data-i18n="t4">Not equity. Not a SAFE, note, or claim on any company. Not a promise of returns or buyback. Not a deposit receipt.</li>
+          <li data-i18n="t5">A credit comes into being when an allowlisted desk signer lands a signed memo for work published in the earn schedule, and in no other way.</li>
+          <li data-i18n="t6">Supply at mint is the credit ledger total. It is derived from signed memos, never an invented number.</li>
+        </ul>
+        <p class="note" data-i18n="termsn">Full rules, kill list, and earn schedule are in the public record at github.com/elghaly-dev/35.</p>
+      </section>
+      <section>
+        <h2 data-i18n="earnt">Earn schedule</h2>
+        <table class="earn">
+          <thead><tr><th data-i18n="earnwhat">What earns a credit</th><th data-i18n="earncredit">Credit</th></tr></thead>
+          <tbody>
+            <tr><td><code>desk.session</code></td><td><code>1.000000</code></td></tr>
+            <tr><td><code>desk.report</code></td><td><code>2.000000</code></td></tr>
+          </tbody>
+        </table>
+        <p class="note" data-i18n="earnp">A rate that is not on this table cannot be issued — the issuer refuses it and the mint gate fails the ledger. Rates may change; already-issued credits keep the rate they were issued at.</p>
+        <p class="note"><a href="https://github.com/elghaly-dev/35/blob/main/EARN.md">EARN.md</a></p>
+      </section>
+      <section>
+        <h2 data-i18n="credt">What a credit is for</h2>
+        <ul class="terms">
+          <li data-i18n="cred1">Today — nothing spendable. A credit is a signed ledger row proving the desk recorded work at the published rate. It does not entitle anyone to tokens, cash, SOL, or USDC right now. Mint unpublished. No pool.</li>
+          <li data-i18n="cred2">Later — when all of these hold: the desk&#39;s realized earnings cover rent, the ledger reconciles, gate.js prints PASS, and the owner explicitly says mint: each credit may convert 1:1 to one unit of 35 at six decimals in a single mint event. Supply equals the ledger total from signed memos — never invented. Until then, credits stay credits.</li>
+          <li data-i18n="cred3">Never — 35 is not sold. Nobody buys credit with SOL or USDC. Not redeemable for cash or crypto. Not equity, not a deposit receipt, not a promise of returns or buyback. If the gate never passes, credits remain credits.</li>
+        </ul>
+      </section>
+      <section>
+        <h2 data-i18n="ledt">Ledger</h2>
+        <div class="section-card">
+        <dl class="ledger" id="ledger">
+          <div class="addr-row"><dt data-i18n="onChain">On chain</dt><dd data-snap="onChain">5</dd></div>
+          <div class="addr-row"><dt data-i18n="inLedger">In ledger</dt><dd data-snap="inLedger">5</dd></div>
+          <div class="addr-row"><dt data-i18n="missing">Missing</dt><dd data-snap="missing">0</dd></div>
+          <div class="addr-row"><dt data-i18n="entries">Entries</dt><dd data-snap="entries">5</dd></div>
+          <div class="addr-row"><dt data-i18n="total">Total</dt><dd data-snap="total">5.000000</dd></div>
+          <div class="addr-row"><dt data-snap="week">2026-W38</dt><dd data-snap="weekCredit">5.000000</dd></div>
+          <div class="addr-row"><dt data-i18n="lastRec">Last reconcile</dt><dd data-snap="status">reconciled on 2026-09-17</dd></div>
+        </dl>
+        <p class="note" id="ledgerNote" data-i18n="ledgerNote">A point-in-time snapshot, not updated as the desk runs: the last reconcile run on the desk box (2026-09-17, week 2026-W38). This page reads <a href="/ledger-snapshot.json">ledger-snapshot.json</a> and does not recompute the ledger. Mint stays unpublished.</p>
+        </div>
+      </section>
+      <section>
+        <h2 data-i18n="addr">Addresses</h2>
+        <div class="section-card">
+        <dl>
+          <div class="addr-row"><dt data-i18n="mode">Mode</dt><dd id="mode">earned</dd></div>
+          <div class="addr-row"><dt data-i18n="mail">Mail</dt><dd><a href="mailto:35@elghaly.dev">35@elghaly.dev</a></dd></div>
+          <div class="addr-row"><dt data-i18n="support">Support</dt><dd><a href="mailto:support@elghaly.dev">support@elghaly.dev</a></dd></div>
+          <div class="addr-row"><dt>deskSigner</dt><dd id="deskSigner"><a href="https://solscan.io/account/3BZGNtr7AQ5c6Rf7nUhunfvqooQAtb5Eaek9Hw1npbLo">3BZGNtr7AQ5c6Rf7nUhunfvqooQAtb5Eaek9Hw1npbLo</a></dd></div>
+          <div class="addr-row"><dt>Squads</dt><dd id="squadsVault"><a href="https://solscan.io/account/GMyuRJbwPTF5pEHvMCNJqujoLk8tZCdFY6i9feMoczcQ">GMyuRJbwPTF5pEHvMCNJqujoLk8tZCdFY6i9feMoczcQ</a></dd></div>
+          <div class="addr-row"><dt data-i18n="record">Public record</dt><dd><a href="https://github.com/elghaly-dev/35">github.com/elghaly-dev/35</a></dd></div>
+          <div class="addr-row"><dt data-i18n="mint">Mint</dt><dd id="mint">unpublished</dd></div>
+          <div class="addr-row"><dt data-i18n="pool">Pool</dt><dd id="pool">unpublished</dd></div>
+        </dl>
+        <p class="note" data-i18n="addrNote">Memo signer / treasury. Do not send deposits. KEEP · 350 · cheap_* stay off this page.</p>
+        </div>
+      </section>
     </main>
-    <footer>
+    <footer class="footer">
       <p class="signs-up" aria-hidden="true">✝️🧿🪬</p>
       <p data-i18n="footerDream">💭 you dream we build 🧠💡</p>
       <p data-i18n="footerMade">made by love ❤️</p>
-      <p><span data-i18n="weAre24">We are 24</span> · <a href="mailto:support@elghaly.dev">support@elghaly.dev</a></p>
+      <p data-i18n="footerContact">Email first: support@elghaly.dev. Calls only by appointment.</p>
+      <p class="footer__nav"><a href="https://chatting.elghaly.dev/" rel="noopener">Chatting</a></p>
       <p class="signs-down" aria-hidden="true">3️⃣🧿5️⃣</p>
     </footer>
   </div>
   <script src="ui.js"></script>
-  <script src="themes.js"></script>
 </body>
 </html>
