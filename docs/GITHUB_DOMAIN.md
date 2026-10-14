@@ -24,4 +24,4 @@ Do not edit that CNAME while verifying.
 6. Back on GitHub Pages settings, click **Verify**.
 7. Do not delete the challenge TXT until GitHub says the domain is verified.
 
-If GitHub instead asks to verify from [github.com/Alarm2024/35/settings/pages](https://github.com/Alarm2024/35/settings/pages) under Custom domain, that check is for `35.elghaly.dev` and is already green when DNS check successful is showing.
+If GitHub instead asks to verify from [github.com/elghaly-dev/35/settings/pages](https://github.com/elghaly-dev/35/settings/pages) under Custom domain, that check is for `35.elghaly.dev` and is already green when DNS check successful is showing.
