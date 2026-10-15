@@ -11,6 +11,8 @@ FOOTER_URLS = [
     "https://chatting.elghaly.dev/",
 ]
 
+FOOTER_BLOCK = re.compile(r"<footer\b[^>]*>(.*?)</footer>", re.I | re.S)
+
 FORBIDDEN_WORDS = re.compile(r"\b(live|profit|guarantee|audit|launched)\b", re.I)
 FORBIDDEN = [
     (re.compile(r"qq\.com", re.I), "qq.com"),
@@ -65,6 +67,13 @@ def is_full_page(path: pathlib.Path, raw: str) -> bool:
     return True
 
 
+def footer_has_llc(raw: str) -> bool:
+    block = FOOTER_BLOCK.search(raw)
+    if block:
+        return "elghaly, LLC" in block.group(1)
+    return False
+
+
 def main():
     errors = []
     html_paths = [
@@ -87,8 +96,8 @@ def main():
     for path in html_paths:
         rel = path.relative_to(ROOT)
         raw = path.read_text(encoding="utf-8")
-        if is_full_page(path, raw) and "elghaly, LLC" not in raw:
-            errors.append("%s: missing elghaly, LLC" % rel)
+        if is_full_page(path, raw) and not footer_has_llc(raw):
+            errors.append("%s: footer missing elghaly, LLC" % rel)
         vis = visible_text(raw)
         for pat, label in FORBIDDEN:
             if pat.search(raw if label == "support@elghaly.dev" else vis):
