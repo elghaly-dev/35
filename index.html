@@ -12,10 +12,6 @@
   <link rel="preload" href="/fonts/outfit-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/outfit-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/outfit-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" as="image" type="image/avif"
-    href="/assets/hero/hero-1280.avif"
-    imagesrcset="/assets/hero/hero-640.avif 640w, /assets/hero/hero-1280.avif 1280w, /assets/hero/hero-1920.avif 1920w"
-    imagesizes="(max-width: 960px) 100vw, 72rem" />
   <style>
     @font-face {
       font-family: "Outfit";
@@ -442,11 +438,11 @@
 <body>
   <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
   <header class="nav">
-    <div class="nav__langs">
-      <div class="lang-switch" id="langbar" role="group" aria-label="Language"></div>
-    </div>
     <div class="nav__in">
       <a class="brand" href="/"><span class="mark" aria-hidden="true">35</span><span>elghaly</span></a>
+    </div>
+    <div class="nav__langs">
+      <div class="lang-switch" id="langbar" role="group" aria-label="Language"></div>
     </div>
   </header>
   <div class="shell">
@@ -456,11 +452,8 @@
         <h1 class="sr" data-i18n="h1">35</h1>
         <p class="lede" data-i18n="lede">35 is a private earned-credit ledger for this desk. There is no public bot to click, no coin to buy, no deposit to send. Follow the record. Mail if you must. Mint stays unpublished until the desk&#39;s realized earnings cover its rent.</p>
         <div class="cta"><a class="btn-primary" href="mailto:35@elghaly.dev">35@elghaly.dev</a></div>
-        <picture class="hero__art">
-          <source type="image/avif" srcset="/assets/hero/hero-640.avif 640w, /assets/hero/hero-1280.avif 1280w, /assets/hero/hero-1920.avif 1920w" sizes="(max-width: 960px) 100vw, 72rem" />
-          <source type="image/webp" srcset="/assets/hero/hero-640.webp 640w, /assets/hero/hero-1280.webp 1280w, /assets/hero/hero-1920.webp 1920w" sizes="(max-width: 960px) 100vw, 72rem" />
-          <img src="/assets/hero/hero-1280.webp" alt="Abstract ledger art for the 35 closed desk" width="1280" height="853" decoding="async" fetchpriority="high" />
-        </picture>
+        <div class="page-menu" data-page-menu style="display:flex;justify-content:flex-start;min-height:46px;margin:0 0 1rem"></div>
+        <div class="hero__art"><img src="/IMG_5183.jpeg" alt="35 elghaly" width="1168" height="784" decoding="async" fetchpriority="high" /></div>
       </div>
       <div class="grid">
         <article class="card"><h2 data-i18n="c1t">Closed</h2><p data-i18n="c1p">The sniper and flash are not a public product.</p></article>
@@ -570,5 +563,6 @@
     </footer>
   </div>
   <script src="ui.js"></script>
+  <script src="/page-menu.js" defer></script>
 </body>
 </html>
