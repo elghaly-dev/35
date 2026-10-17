@@ -1,0 +1,18 @@
+name: site-check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  rules:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: House rules (HTML)
+        run: python3 scripts/check_site_rules.py
+      - name: Site publishes everything it references
+        run: node scripts/check-site.js

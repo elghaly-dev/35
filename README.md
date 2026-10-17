@@ -1,7 +1,7 @@
 # 35
 
 Public desk page: https://35.elghaly.dev
-Public record: https://github.com/Alarm2024/35
+Public record: https://github.com/elghaly-dev/35
 
 Earned-only. No purchase. No redeem. No outsider deposits. English only.
 
