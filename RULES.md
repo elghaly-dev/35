@@ -80,8 +80,7 @@ No bot hot key (KEEP, 350, cheap_*) ever holds mint, freeze, LP, position NFT, o
 
 ## Jurisdiction
 
-- Locked: California — 548 Market St, San Francisco, CA 94104.
-- Public `protocol.json` field `jurisdiction` currently reads
-  `California, 548 Market, San Francisco 94104`. It must be non-empty at both gates.
-- Mint, pool, and supply cap remain closed regardless of jurisdiction naming.
+- Public docs do not name a country, city, or street address.
+- Public `protocol.json` field `jurisdiction` must be non-empty at both gates. The value is not repeated here.
+- Mint, pool, and supply cap remain closed regardless of that field.
 - If that field is empty, no public announcement and `scripts/gate.js` stays BLOCK.
