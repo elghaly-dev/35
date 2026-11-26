@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>35 — closed desk · elghaly</title>
   <meta name="description" content="We run a closed desk for our own team. There is no public app, nothing for sale, and no deposits accepted. Mail 35@elghaly.dev." />
-  <meta name="theme-color" content="#5a4fc0" />
+  <meta name="theme-color" content="#07080c" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -47,8 +47,9 @@
     }
     :root {
       color-scheme: dark;
-      --bg: #5a4fc0;
-      --bg-2: #6a5fd0;
+      /* page night, as elghaly.dev: --night #07080c, --night-2 #0d1120 */
+      --bg: #07080c;
+      --bg-2: #0d1120;
       --card: #0d0b1f;
       --card-2: #17142f;
       --line: #1c1838;
@@ -69,7 +70,8 @@
       --gutter: 1rem;
     }
     *, *::before, *::after { box-sizing: border-box; }
-    html { -webkit-text-size-adjust: 100%; background: var(--bg); scroll-behavior: smooth; }
+    /* the elghaly.dev page background: night with a lapis glow on top */
+    html { -webkit-text-size-adjust: 100%; background: radial-gradient(120% 60% at 50% -10%, rgba(42, 76, 179, .30), transparent 60%), radial-gradient(80% 50% at 50% 110%, rgba(196, 161, 236, .10), transparent 70%), var(--bg); scroll-behavior: smooth; }
     body {
       margin: 0;
       min-height: 100dvh;
@@ -84,7 +86,8 @@
       inset: 0;
       z-index: -1;
       pointer-events: none;
-      background: linear-gradient(180deg, var(--bg), var(--bg-2));
+      background: none;
+  display: none;
     }
     img { display: block; max-width: 100%; height: auto; }
     a { color: var(--text); text-underline-offset: 3px; }
@@ -107,12 +110,12 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(90, 79, 192, 0.94);
+      background: rgba(13, 17, 32, 0.7);
       border-bottom: 1px solid var(--on-bg-line);
     }
     @supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
       .nav {
-        background: rgba(90, 79, 192, 0.78);
+        background: rgba(13, 17, 32, 0.7);
         -webkit-backdrop-filter: saturate(160%) blur(16px);
         backdrop-filter: saturate(160%) blur(16px);
       }
